@@ -1,0 +1,44 @@
+{
+  "name": "broccoli-vulcanize-html-imports",
+  "version": "0.0.0",
+  "description": "Broccoli plugin for vulcanizing HTML imports with Polymer Vulcanize tool",
+  "homepage": "https://github.com/mbykovskyy/broccoli-vulcanize-html-imports",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mbykovskyy/broccoli-vulcanize-html-imports.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "cd tests && mocha ."
+  },
+  "keywords": [
+    "broccoli-plugin",
+    "broccoli",
+    "polymer",
+    "vulcanize",
+    "vulcan",
+    "web",
+    "components",
+    "concat",
+    "concatenate",
+    "transform",
+    "html",
+    "imports",
+    "templates"
+  ],
+  "author": "Maksym Bykovskyy",
+  "license": "MIT",
+  "dependencies": {
+    "broccoli-filter": "^0.1.6",
+    "broccoli-merge-trees": "^0.1.4",
+    "broccoli-vulcanize": "^1.0.2",
+    "broccoli-writer": "^0.1.1",
+    "cheerio": "^0.17.0",
+    "glob": "^4.0.5",
+    "mkdirp": "^0.5.0"
+  },
+  "devDependencies": {
+    "broccoli": "^0.12.3",
+    "mocha": "^1.21.4"
+  }
+}
