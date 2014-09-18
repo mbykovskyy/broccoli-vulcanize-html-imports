@@ -18,4 +18,12 @@ describe('strip-html-imports', function() {
 
     assert.equal(actual, expected);
   });
+
+  it('should not decode html', function() {
+    var html = '<html>{{link-to "resource"}}</html>';
+    var expected = '<html>{{link-to "resource"}}</html>';
+    var actual = stripImports(html);
+
+    assert.equal(actual, expected);
+  });
 });
