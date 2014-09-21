@@ -26,4 +26,28 @@ describe('strip-html-imports', function() {
 
     assert.equal(actual, expected);
   });
+
+  it('should not break handlebars', function() {
+    var html = '<button {{bing-attr text="button"}}></button>';
+    var expected = '<button {{bing-attr text="button"}}></button>';
+    var actual = stripImports(html);
+
+    assert.equal(actual, expected);
+  });
+
+  it('should process text', function() {
+    var html = 'This is html with no tags.';
+    var expected = 'This is html with no tags.';
+    var actual = stripImports(html);
+
+    assert.equal(actual, expected);
+  });
+
+  it('should not process commented out imports', function() {
+    var html = '<html><!--<link rel="import" href="import1.html">\n--><link rel="import" href="import2.html"></html>';
+    var expected = '<html><!--<link rel="import" href="import1.html">\n--></html>';
+    var actual = stripImports(html);
+
+    assert.equal(actual, expected);
+  });
 });

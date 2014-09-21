@@ -33,8 +33,8 @@
     "broccoli-merge-trees": "^0.1.4",
     "broccoli-vulcanize": "^1.0.2",
     "broccoli-writer": "^0.1.1",
-    "cheerio": "^0.17.0",
     "glob": "^4.0.5",
+    "htmlparser2": "^3.7.3",
     "mkdirp": "^0.5.0"
   },
   "devDependencies": {
