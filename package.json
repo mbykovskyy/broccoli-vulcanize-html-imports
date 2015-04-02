@@ -1,6 +1,6 @@
 {
   "name": "broccoli-vulcanize-html-imports",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Broccoli plugin for vulcanizing HTML imports with Polymer Vulcanize tool",
   "homepage": "https://github.com/mbykovskyy/broccoli-vulcanize-html-imports",
   "repository": {
