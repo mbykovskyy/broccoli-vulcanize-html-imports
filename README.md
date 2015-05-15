@@ -51,7 +51,7 @@ templates
 + - page.html
 ```
 
-The `assets\components.html` and `assets\components.js` are vulcanized import files and `components\component.hbs` and `page.html` are stripped out of HTML imports except the ones that are specified in `excludes.imports` option.
+The `assets\components.html` and `assets\components.js` are vulcanized import files and `components\component.hbs` and `page.html` are stripped out of HTML imports except the ones that are specified in `excludes` option.
 
 See [polymer vulcanize][polymer-vulcanize] for details on `options`.
 
