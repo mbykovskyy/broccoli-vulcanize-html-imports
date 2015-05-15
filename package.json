@@ -31,7 +31,7 @@
   "dependencies": {
     "broccoli-filter": "^0.1.10",
     "broccoli-merge-trees": "^0.1.4",
-    "broccoli-vulcanize": "^1.0.5",
+    "broccoli-vulcanize": "^2.0.2",
     "broccoli-writer": "^0.1.1",
     "glob": "^4.2.1",
     "htmlparser2": "^3.8.2",

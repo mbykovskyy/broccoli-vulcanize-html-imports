@@ -8,15 +8,15 @@ var mergeTrees = require('broccoli-merge-trees');
  * options {
  *   extensions: ['html']
  *   outputFile: 'imports.html',
- *   overwrite: true,
- *   csp: true,
- *   inline: true,
- *   strip: true,
- *   excludes: {
- *     imports: ['regex'],
- *     styles: ['regex'],
- *     scripts: ['regex']
- *   }
+ *   overwrite: false,
+ *   excludes: [/(^data:)|(^http[s]?:)|(^\/)/]
+ *   abspath: '/webroot/',
+ *   stripExcludes: false,
+ *   stripComments: false,
+ *   inlineScripts: false,
+ *   inlineCss: false,
+ *   implicitStrip: false
+ * }
  */
 module.exports = function(inputTree, options) {
   options = options || {};
@@ -25,26 +25,29 @@ module.exports = function(inputTree, options) {
     return '**/*.' + ext;
   });
   var outputFile = options.outputFile || 'vulcanized.html';
-  var excludes = options.excludes || {};
+  var excludes = options.excludes || [];
 
   var collected = collectImports(inputTree, {
     inputFiles: inputFiles,
     outputFile: outputFile,
-    excludes: excludes.imports
+    excludes: excludes
   });
 
   var vulcanized = vulcanize(collected, {
     input: outputFile,
     output: outputFile,
-    csp: options.csp,
-    inline: options.inline,
-    strip: options.strip,
-    excludes: excludes
+    excludes: excludes,
+    abspath: options.abspath,
+    stripExcludes: options.stripExcludes,
+    stripComments: options.stripComments,
+    inlineScripts: options.inlineScripts,
+    inlineCss: options.inlineCss,
+    implicitStrip: options.implicitStrip
   });
 
   var stripped = stripImports(inputTree, {
     extensions: options.extensions,
-    excludes: excludes.imports
+    excludes: excludes
   });
 
   return mergeTrees([stripped, vulcanized], {

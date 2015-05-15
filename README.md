@@ -18,14 +18,13 @@ var options = {
   extensions: ['html', 'hbs'],
   outputFile: 'assets/components.html',
   overwrite: true,
-  csp: true,
-  inline: true,
-  strip: true,
-  excludes: {
-    imports: ["(^data:)|(^http[s]?:)|(^\/)"],
-    scripts: ["(^data:)|(^http[s]?:)|(^\/)"],
-    styles: ["(^data:)|(^http[s]?:)|(^\/)"]
-  }
+  excludes: [/^data:/, /^http[s]?:/, /^\//],
+  abspath: '/webroot/',
+  stripExcludes: false,
+  stripComments: false,
+  inlineScripts: false,
+  inlineCss: false,
+  implicitStrip: false
 };
 
 module.exports = vulcanize(inputTree, options);
